@@ -334,7 +334,12 @@ export async function connect(apiKey, { voice = 'coral', systemPrompt = "You are
       session: {
         type:         'realtime',
         instructions: systemPrompt,
-        tools:        TOOLS,
+        audio: {
+          output: {
+            voice: voice,
+          },
+        },
+        tools: TOOLS,
       },
     }));
 
